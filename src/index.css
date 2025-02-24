@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes clip-in {
+  from {
+    clip-path: circle(0% at top right);
+  }
+  to {
+    clip-path: circle(75% at top right);
+  }
+}
+
+@keyframes clip-out {
+  from {
+    clip-path: circle(75% at top right);
+  }
+  to {
+    clip-path: circle(0% at top right);
+  }
+}
+
+.clip-signin {
+  animation: clip-out 1s forwards;
+}
+
+.clip-signup {
+  animation: clip-in 1s forwards;
+}
+
+@keyframes clip-in-2 {
+  from {
+    clip-path: circle(0% at top left);
+  }
+  to {
+    clip-path: circle(75% at top left);
+  }
+}
+
+@keyframes clip-out-2 {
+  from {
+    clip-path: circle(75% at top left);
+  }
+  to {
+    clip-path: circle(0% at top left);
+  }
+}
+
+.clip-signin-2 {
+  animation: clip-out-2 1s forwards;
+}
+
+.clip-signup-2 {
+  animation: clip-in-2 1s forwards;
+}
+
+.element {
+  transition: transform 300ms ease-out;
+}
+
+.element:hover {
+  transform: translate(0px, 0px) scale(1.5, 1.5);
+}
+
+.left_gradint{
+background: rgb(2,0,36);
+background: linear-gradient(-315deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);
+}
+.right_gradint{
+background: rgb(2,0,36);
+background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 20%, rgba(0,212,255,1) 100%);
+}
