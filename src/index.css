@@ -7,6 +7,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.whiteShadow{
+box-shadow: 0px 0px 65px 15px rgba(0, 0, 0, 0.3);
+}
+
 @keyframes clip-in {
   from {
     clip-path: circle(0% at top right);
@@ -74,4 +78,8 @@ background: linear-gradient(-315deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgb
 .right_gradint{
 background: rgb(2,0,36);
 background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 20%, rgba(0,212,255,1) 100%);
+}
+
+.videoOpacity {
+  transition: opacity 2s ease-in-out; /* انتقال opacity در مدت زمان ۲ ثانیه */
 }

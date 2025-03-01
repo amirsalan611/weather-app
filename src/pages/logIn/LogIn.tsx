@@ -5,12 +5,14 @@ import { IoLogoLinkedin } from "react-icons/io5";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { useState } from "react";
 import { Login } from "../../components/login/Login";
+import { useNavigate } from "react-router-dom";
 
 export default function LogIn() {
   const [signup, setSignUp] = useState<boolean>(false);
   const [signinError, setsigninError] = useState<boolean>(false);
   const [signinEmail, setSigninEmail] = useState<string>("");
   const [signinPassword, setSigninPassword] = useState<string>("");
+  const navigator = useNavigate()
 
   const signinHandler = async () => {
     if (signinEmail && signinPassword) {
@@ -20,6 +22,7 @@ export default function LogIn() {
           password: signinPassword,
         });
         localStorage.setItem("accestoken", result.data.accessToken);
+        navigator("/web")
       } catch (error) {
         console.log("Login failed:", error);
       }
@@ -37,18 +40,22 @@ export default function LogIn() {
           } left_gradint w-full h-full absolute top-0 right-0 z-20 flex justify-end `}
         >
           <div
-            className={`text-white z-30 absolute right-[10%] top-[200px] flex flex-col items-center gap-5 transition-transform transform delay-500 duration-1000 ${
-              signup && "delay-500 translate-x-[500px]"
+            className={`text-white z-30 absolute right-[10%] top-[150px] flex flex-col items-center gap-5 transition-transform transform delay-500 duration-1000 ${
+              signup && "delay-500 translate-x-[600px]"
             }`}
           >
-            <h1 className="text-[30px]">Dont have Account ?</h1>
-            <Button
-              onClick={() => {
-                setSignUp(true);
-              }}
-              content="SIGN UP"
-              className="text-[16px] font-semibold shadow-2xl w-[200px]"
-            />
+            <h1 className="text-[50px]">Hello , Welcome!</h1>
+            <div className="flex flex-col gap-2 items-center">
+              {" "}
+              <h2 className="text-[15px]">Dont have Account ?</h2>
+              <Button
+                onClick={() => {
+                  setSignUp(true);
+                }}
+                content="SIGN UP"
+                className="text-[14px] font-semibold shadow-2xl w-[100px] py-1"
+              />
+            </div>
           </div>
         </div>
         <div
@@ -57,18 +64,21 @@ export default function LogIn() {
           } right_gradint w-full h-full absolute top-0 right-0 z-20`}
         >
           <div
-            className={`text-white z-30 absolute left-[-33%] top-[200px] flex flex-col items-center gap-5 transition-transform transform delay-500 duration-1000 ${
-              signup && "delay-500 translate-x-[500px]"
+            className={`text-white z-30 absolute left-[-43%] top-[150px] flex flex-col items-center gap-5 transition-transform transform delay-500 duration-1000 ${
+              signup && "delay-500 translate-x-[600px]"
             }`}
           >
-            <h1 className="text-[30px]">Do You Have Account ?</h1>
-            <Button
-              onClick={() => {
-                setSignUp(false);
-              }}
-              content="SIGN IN"
-              className="text-[16px] font-semibold shadow-2xl w-[200px]"
-            />
+            <div className="flex flex-col gap-2 items-center">
+              <h1 className="text-[50px]">Welcome Back!</h1>
+              <h2 className="text-[15px]">Already Have An Account ?</h2>
+              <Button
+                onClick={() => {
+                  setSignUp(false);
+                }}
+                content="SIGN IN"
+                className="text-[16px] font-semibold shadow-2xl w-[100px] py-1"
+              />
+            </div>
           </div>
         </div>
         <img
